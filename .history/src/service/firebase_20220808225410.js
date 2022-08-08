@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
