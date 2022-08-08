@@ -4,7 +4,7 @@ import React from 'react';
 
 function App({authService}) {
   return (
-  <div className={styles.app}>
+  <div>
     <Login authService={authService}/>;
   </div>
   )

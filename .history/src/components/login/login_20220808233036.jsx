@@ -14,12 +14,12 @@ const Login = ({ authService }) => {
       <Header/>
         <section>
           <h1>Login</h1>
-          <ul className={styles.list}>
-            <li className={styles.item}>
-              <button className={styles.button} onClick={onLogin}>Google</button>
+          <ul>
+            <li>
+              <button onClick={onLogin}>Google</button>
             </li>
             <li>
-              <button className={styles.button} onClick={onLogin}>Github</button>
+              <button onClick={onLogin}>Github</button>
             </li>
           </ul>
         </section>
