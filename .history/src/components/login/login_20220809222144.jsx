@@ -20,12 +20,12 @@ const Login = ({ authService }) => {
       .then(data => goToMaker(data.user.uid));
   }
 
-  useEffect(() => {
+  useEffect{() => {
     authService
     .onAuthChange(user => {
       user && goToMaker(user.uid);
     })
-  })
+  }}
 
   return (
     <section className={styles.login}>

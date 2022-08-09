@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
@@ -17,16 +17,8 @@ const Login = ({ authService }) => {
   const onLogin = (event) => {
     authService
       .login(event.currentTarget.textContent)
-      .then(data => goToMaker(data.user.uid));
+      .then(console.log);
   }
-
-  useEffect(() => {
-    authService
-    .onAuthChange(user => {
-      user && goToMaker(user.uid);
-    })
-  })
-
   return (
     <section className={styles.login}>
       <Header/>
