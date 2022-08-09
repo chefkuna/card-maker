@@ -1,0 +1,9 @@
+.editor {
+  flex-basis: 50%;
+  background-color: wheat;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
