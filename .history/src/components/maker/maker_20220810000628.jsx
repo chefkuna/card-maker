@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './maker.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useState } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
@@ -11,35 +11,35 @@ const Maker = ({authService}) => {
     {
       id: '1',
       name: 'Ellie',
-      company: 'Samsung',
+      company: 'Samsung'
       theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL:
     },
     {
       id: '2',
       name: 'Ellie2',
-      company: 'Samsung',
-      theme: 'dark',
+      company: 'Samsung'
+      theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL:
     },
     {
       id: '3',
       name: 'Ellie3',
-      company: 'Samsung',
-      theme: 'colorful',
+      company: 'Samsung'
+      theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL:
     },
   ]);
   const navigate = useNavigate();

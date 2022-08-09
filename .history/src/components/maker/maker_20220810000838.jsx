@@ -17,29 +17,29 @@ const Maker = ({authService}) => {
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL: 'ellie.png'
     },
     {
       id: '2',
       name: 'Ellie2',
       company: 'Samsung',
-      theme: 'dark',
+      theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL: 'ellie.png'
     },
     {
       id: '3',
       name: 'Ellie3',
       company: 'Samsung',
-      theme: 'colorful',
+      theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null
+      fileURL: 'ellie.png'
     },
   ]);
   const navigate = useNavigate();

@@ -34,7 +34,7 @@ const Maker = ({authService}) => {
       id: '3',
       name: 'Ellie3',
       company: 'Samsung',
-      theme: 'colorful',
+      theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',

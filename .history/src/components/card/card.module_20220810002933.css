@@ -1,0 +1,7 @@
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+  background-color: yellow;
+}

@@ -1,0 +1,11 @@
+@value makerShadow from '../../common/colors.css';
+
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+  padding: 0.2em 0;
+
+  background-color: yellow;
+}
