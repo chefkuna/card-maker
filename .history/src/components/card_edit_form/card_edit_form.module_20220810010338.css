@@ -28,18 +28,9 @@
   flex: 1 1 30%;
 }
 
-.fileInput {
-  padding: 0;
-  flex: 1 1 50%;
-}
-
 .input:focus,
 .texarea:focus,
 .select:focus,
 .button:focus {
   outline: 0;
-}
-
-.textarea {
-  flex-basis: 100%;
 }

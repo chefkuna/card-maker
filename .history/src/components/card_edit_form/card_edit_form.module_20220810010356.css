@@ -28,11 +28,6 @@
   flex: 1 1 30%;
 }
 
-.fileInput {
-  padding: 0;
-  flex: 1 1 50%;
-}
-
 .input:focus,
 .texarea:focus,
 .select:focus,
