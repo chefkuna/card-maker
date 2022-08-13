@@ -43,7 +43,7 @@ const Maker = ({ authService }) => {
       fileURL: null,
     },
   ]);
-  const navigate = useNavigate();
+  const history = useHistory();
   const onLogout = () => {
     authService.logout();
   };
@@ -51,7 +51,7 @@ const Maker = ({ authService }) => {
   useEffect(() => {
     authService.onAuthChange(user => {
       if (!user) {
-        navigate('/');
+        history.push('/');
       }
     });
   });

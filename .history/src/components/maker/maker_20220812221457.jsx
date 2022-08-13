@@ -6,41 +6,40 @@ import { useNavigate } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
-
-const Maker = ({ authService }) => {
+const Maker = ({authService}) => {
   const [cards, setCards] = useState([
     {
       id: '1',
       name: 'Ellie',
-      company: 'Samsung',
-      theme: 'dark',
-      title: 'Software Engineer',
-      email: 'ellie@gmail.com',
-      message: 'go for it',
-      fileName: 'ellie',
-      fileURL: null,
-    },
-    {
-      id: '2',
-      name: 'Ellie2',
       company: 'Samsung',
       theme: 'light',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: 'ellie.png',
+      fileURL: null
+    },
+    {
+      id: '2',
+      name: 'Bob',
+      company: 'Samsung',
+      theme: 'dark',
+      title: 'Software Engineer',
+      email: 'ellie@gmail.com',
+      message: 'go for it',
+      fileName: 'ellie',
+      fileURL: null
     },
     {
       id: '3',
-      name: 'Ellie3',
+      name: 'James',
       company: 'Samsung',
       theme: 'colorful',
       title: 'Software Engineer',
       email: 'ellie@gmail.com',
       message: 'go for it',
       fileName: 'ellie',
-      fileURL: null,
+      fileURL: null
     },
   ]);
   const navigate = useNavigate();
@@ -50,25 +49,24 @@ const Maker = ({ authService }) => {
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      if (!user) {
+      if(!user) {
         navigate('/');
       }
-    });
-  });
+    })
+  })
 
-  const addCard = card => {
-    const updated = [...cards, card];
-    setCards(updated);
-  };
+  const addCard = (card) => {
+    console.log(card);
+  }
 
-  return (
+  return(
     <section className={styles.maker}>
-      <Header onLogout={onLogout} />
-      <div className={styles.container}>
-        <Editor cards={cards} addCard={addCard} />
-        <Preview cards={cards} />
-      </div>
-      <Footer />
+      <Header onLogout={onLogout}/>
+        <div className={styles.container}>
+          <Editor cards={cards} addCard={addCard}/>
+          <Preview cards={cards}/>
+        </div>
+      <Footer/>
     </section>
   );
 };
