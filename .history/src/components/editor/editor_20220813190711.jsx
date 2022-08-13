@@ -9,13 +9,12 @@ const Editor = ({ FileInput, cards, addCard, updateCard, deleteCard }) => (
     {Object.keys(cards).map(key => (
       <CardEditForm 
         key={key} 
-        FileInput={FileInput}
         card={cards[key]} 
         updateCard={updateCard} 
         deleteCard={deleteCard} 
       />
     ))}
-    <CardAddForm FileInput={FileInput} onAdd={addCard} />
+    <CardAddForm onAdd={addCard} />
   </section>
 );
 

@@ -3,19 +3,12 @@ import styles from './image_file_input.module.css';
 
 const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
   const inputRef = useRef();
-  const onButtonClick = (event) => {
-    event.preventDefault();
+  const onButtonClick = () => {
     inputRef.current.click();
   }
 
-  const onChange = async event => {
+  const onFileChange = (event) => {
     console.log(event.target.files[0]);
-    const uploaded = await imageUploader.upload(event.target.files[0]);
-    console.log(uploaded);
-    onFileChange({
-      name: uploaded.original_filename,
-      url: uploaded.url,
-    })
   }
 
   return <div className={styles.container}>
@@ -25,7 +18,7 @@ const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
       type="file" 
       accept="image/*" 
       name="file"
-      onChange={onChange}
+      onChange={onFileChange}
     />
     <button className={styles.button} onClick={onButtonClick}>
       {name || "No file"}

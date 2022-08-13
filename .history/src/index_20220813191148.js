@@ -4,7 +4,7 @@ import './index.module.css';
 import App from './app';
 import AuthService from './service/auth_service';
 import ImageUploader from './service/image_uploader';
-import ImageFileInput from './components/image_file_input/image_file_input';
+import ImageFileInput from '../src/components/image_file_input/image_file_input';
 
 
 const authService = new AuthService();

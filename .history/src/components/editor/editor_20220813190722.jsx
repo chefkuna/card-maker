@@ -15,7 +15,7 @@ const Editor = ({ FileInput, cards, addCard, updateCard, deleteCard }) => (
         deleteCard={deleteCard} 
       />
     ))}
-    <CardAddForm FileInput={FileInput} onAdd={addCard} />
+    <CardAddForm onAdd={addCard} />
   </section>
 );
 
