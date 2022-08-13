@@ -24,12 +24,10 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
       [event.currentTarget.name]: event.currentTarget.value,
     })
   }
-  const onSubmit = (event) => {
-    deleteCard(card);
-  };
+  const onSubmit = () => {};
   
   return (
-    <form className={styles.form}>
+    <form ref={formRef} className={styles.form}>
       <input 
         className={styles.input} 
         type="text" 

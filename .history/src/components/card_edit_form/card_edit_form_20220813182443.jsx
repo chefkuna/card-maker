@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Button from '../button/button';
 import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_edit_form.module.css';
 
-const CardEditForm = ( {card, updateCard, deleteCard } ) => {
+const CardEditForm = ( {card} ) => {
   const {
     name, 
     company, 
@@ -13,19 +13,8 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
     theme, 
     fileName, 
     fileURL } = card;
-  
-  const onChange = (event) => {
-    if (event.currentTarget == null) {
-      return;
-    }
-    event.preventDefault();
-    updateCard({
-      ...card,
-      [event.currentTarget.name]: event.currentTarget.value,
-    })
-  }
-  const onSubmit = (event) => {
-    deleteCard(card);
+  const onSubmit = () => {
+
   };
   
   return (
@@ -35,21 +24,17 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         type="text" 
         name="name" 
         defaultValue={name}
-        onChange={onChange} 
+        ref={nameRef}  
       />
       <input 
         className={styles.input} 
         type="text" 
         name="company" 
-        defaultValue={company}
-        onChange={onChange} 
-      />
+        defaultValue={company}/>
       <select 
         className={styles.select} 
         name="theme" 
-        defaultValue={theme}
-        onChange={onChange} 
-      >
+        defaultValue={theme}>
           <option defaultValue="light">light</option>
           <option defaultValue="dark">dark</option>
           <option defaultValue="colorful">colorful</option>
@@ -58,22 +43,16 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         className={styles.input} 
         type="text" 
         name="title" 
-        defaultValue={title}
-        onChange={onChange}   
-      />
+        defaultValue={title}/>
       <input 
         className={styles.input} 
         type="text" 
         name="email" 
-        defaultValue={email}
-        onChange={onChange}   
-      />
+        defaultValue={email}/>
       <textarea 
         className={styles.textarea} 
         name="message" 
-        defaultValue={message}
-        onChange={onChange} 
-      />
+        defaultValue={message}/>
       <div 
         className={styles.fileInput}>
         <ImageFileInput />

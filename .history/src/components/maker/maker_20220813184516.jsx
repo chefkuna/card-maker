@@ -57,31 +57,27 @@ const Maker = ({ authService }) => {
     });
   });
 
-  const createOrUpdateCard = card => {
-    setCards(cards => {
-      const updated = {...cards};
-      updated[card.id] = card;
-      return updated;
-    });
+  const addCard = card => {
+    const updated = [...cards, card];
+    setCards(updated);
+  };
+
+  const updateCard = card => {
+    const updated = {...cards};
+    updated[card.id] = card;
+    setCards(updated);
   }
+  
 
   const deleteCard = card => {
-    setCards(cards => {
-      const updated = {...cards};
-      delete updated[card.id];
-      return updated;
-    });
+    console.log(card);
   };
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor 
-          cards={cards} 
-          addCard={createOrUpdateCard} 
-          updateCard={createOrUpdateCard} 
-          deleteCard={deleteCard} />
+        <Editor cards={cards} addCard={addCard} updateCard={updateCard} deleteCard={deleteCard} />
         <Preview cards={cards} />
       </div>
       <Footer />

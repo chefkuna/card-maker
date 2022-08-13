@@ -8,8 +8,8 @@ import Preview from '../preview/preview';
 
 
 const Maker = ({ authService }) => {
-  const [cards, setCards] = useState({
-    '1': {
+  const [cards, setCards] = useState([
+    {
       id: '1',
       name: 'Ellie',
       company: 'Samsung',
@@ -20,7 +20,7 @@ const Maker = ({ authService }) => {
       fileName: 'ellie',
       fileURL: null,
     },
-    '2': {
+    {
       id: '2',
       name: 'Ellie2',
       company: 'Samsung',
@@ -31,7 +31,7 @@ const Maker = ({ authService }) => {
       fileName: 'ellie',
       fileURL: 'ellie.png',
     },
-    '3': {
+    {
       id: '3',
       name: 'Ellie3',
       company: 'Samsung',
@@ -42,8 +42,7 @@ const Maker = ({ authService }) => {
       fileName: 'ellie',
       fileURL: null,
     },
-  });
-
+  ]);
   const navigate = useNavigate();
   const onLogout = () => {
     authService.logout();
@@ -57,35 +56,29 @@ const Maker = ({ authService }) => {
     });
   });
 
-  const createOrUpdateCard = card => {
-    setCards(cards => {
-      const updated = {...cards};
-      updated[card.id] = card;
-      return updated;
-    });
-  }
+  const addCard = card => {
+    const updated = [...cards, card];
+    setCards(updated);
+  };
+
+  const updateCard = card => {
+    console.log(card);
+  };
 
   const deleteCard = card => {
-    setCards(cards => {
-      const updated = {...cards};
-      delete updated[card.id];
-      return updated;
-    });
+    console.log(card);
   };
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor 
-          cards={cards} 
-          addCard={createOrUpdateCard} 
-          updateCard={createOrUpdateCard} 
-          deleteCard={deleteCard} />
+        <Editor cards={cards} addCard={addCard} updateCard={updateCard} deleteCard={deleteCard} />
         <Preview cards={cards} />
       </div>
       <Footer />
     </section>
   );
-}
+};
+
 export default Maker;

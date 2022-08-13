@@ -4,6 +4,14 @@ import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ( {card, updateCard, deleteCard } ) => {
+  const formRef = useRef();
+  const nameRef = useRef();
+  const companyRef = useRef();
+  const themeRef = useRef();
+  const titleRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+  
   const {
     name, 
     company, 
@@ -24,9 +32,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
       [event.currentTarget.name]: event.currentTarget.value,
     })
   }
-  const onSubmit = (event) => {
-    deleteCard(card);
-  };
+  const onSubmit = () => {};
   
   return (
     <form className={styles.form}>

@@ -4,6 +4,14 @@ import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ( {card, updateCard, deleteCard } ) => {
+  const formRef = useRef();
+  const nameRef = useRef();
+  const companyRef = useRef();
+  const themeRef = useRef();
+  const titleRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+  
   const {
     name, 
     company, 
@@ -24,13 +32,12 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
       [event.currentTarget.name]: event.currentTarget.value,
     })
   }
-  const onSubmit = (event) => {
-    deleteCard(card);
-  };
+  const onSubmit = () => {};
   
   return (
-    <form className={styles.form}>
+    <form ref={formRef} className={styles.form}>
       <input 
+        ref={nameRef}
         className={styles.input} 
         type="text" 
         name="name" 
@@ -38,6 +45,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         onChange={onChange} 
       />
       <input 
+        ref={companyRef}
         className={styles.input} 
         type="text" 
         name="company" 
@@ -45,6 +53,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         onChange={onChange} 
       />
       <select 
+        ref={themeRef}
         className={styles.select} 
         name="theme" 
         defaultValue={theme}
@@ -55,6 +64,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
           <option defaultValue="colorful">colorful</option>
       </select>
       <input 
+        ref={titleRef}
         className={styles.input} 
         type="text" 
         name="title" 
@@ -62,6 +72,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         onChange={onChange}   
       />
       <input 
+        ref={emailRef}
         className={styles.input} 
         type="text" 
         name="email" 
@@ -69,6 +80,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
         onChange={onChange}   
       />
       <textarea 
+        ref={messageRef}
         className={styles.textarea} 
         name="message" 
         defaultValue={message}

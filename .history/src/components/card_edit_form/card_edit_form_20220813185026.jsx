@@ -25,7 +25,7 @@ const CardEditForm = ( {card, updateCard, deleteCard } ) => {
     })
   }
   const onSubmit = (event) => {
-    deleteCard(card);
+    delteCard(card);
   };
   
   return (
