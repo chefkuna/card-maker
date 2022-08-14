@@ -33,7 +33,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       updated[card.id] = card;
       return updated;
     });
-    cardRepository.saveCard(userId, card);
   }
 
   const deleteCard = card => {
@@ -42,7 +41,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.removecard(userId, card);
   };
 
   return (

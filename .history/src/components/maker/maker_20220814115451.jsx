@@ -42,7 +42,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.removecard(userId, card);
   };
 
   return (

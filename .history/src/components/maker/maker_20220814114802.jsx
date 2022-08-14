@@ -7,10 +7,10 @@ import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
 
-const Maker = ({ FileInput, authService, cardRepository }) => {
+const Maker = ({ FileInput, authService }) => {
   const navigateState = useNavigate().state;
   const [cards, setCards] = useState({});
-  const [userId, setUserId] = useState(navigateState && navigateState.id);
+  const [userId, setUserId] = useState();
 
   const navigate = useNavigate();
   const onLogout = () => {
@@ -19,9 +19,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      if (user) {
-        setUserId(user.uid);
-      } else {
+      if (!user) {
         navigate('/');
       }
     });
@@ -33,7 +31,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       updated[card.id] = card;
       return updated;
     });
-    cardRepository.saveCard(userId, card);
   }
 
   const deleteCard = card => {
@@ -42,7 +39,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.removecard(userId, card);
   };
 
   return (
