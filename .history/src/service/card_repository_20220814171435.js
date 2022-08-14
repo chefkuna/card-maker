@@ -7,8 +7,7 @@ class CardRepository {
     ref.on('value', snapshot => {
       const value = snapshot.val();
       value && onUpdate(value);
-    });
-    return () => ref.off();
+    })
   }
 
   saveCard(userId, card) {

@@ -21,10 +21,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     if(!userId) {
       return;
     }
-    const stopSync = cardRepository.syncCards(userId, cards => {
+    cardRepository.syncCards(userId, cards => {
       setCards(cards);
     })
-    return () => stopSync(); 
   }, [userId]);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       delete updated[card.id];
       return updated;
     });
-    cardRepository.removeCard(userId, card);
+    cardRepository.removecard(userId, card);
   };
 
   return (
